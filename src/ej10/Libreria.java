@@ -27,7 +27,7 @@ un constructor con el nombre y la dirección como parámetro de entrada.
     public Libreria(String nombre,String direccion){
         this.nombre=nombre;
         this.direccion=direccion;
-        //this.libros=libros;
+        
     }
     
     public String getNombre(){return this.nombre;}
@@ -125,11 +125,30 @@ insertado. En caso contrario (vector lleno) debe devolver -1.
         }
         return numero;
     }
+    /* imprimir(): Método para imprimir el nombre, la dirección completa y el 
+    listado de libros junto con información de su autor y sudisponibilidad 
+    actual, la cantidad total de libros y la cantidad de libros disponibles.*/
+    public String imprimir(){
+        String texto="6666";
+        
+        texto="\tLibreria: "+this.nombre+"\tDireccion:"+this.direccion;
+        for (int i = 0; i < libro.length; i++) {
+            if (libro[i]!=null){
+                texto+="\t"+libro[i].getTitulo()+"\n";
+                texto+="\t"+libro[i].getAutor()+"\n";
+                if (libro[i].getDisponible()==true){
+                    texto+="\tDisponible: Sí\n";
+                }else{
+                    texto+="\tDisponible: No\n";
+                }
+            }
+            
+        }
+        return texto;
+    }
     
     
-    /* imprimir(): Método para imprimir el nombre, la dirección completa
-y el listado de libros junto con información de su autor y sudisponibilidad actual, la cantidad total de libros y la cantidad de
-libros disponibles.
+    /*
  prestar(int pos): Método para indicar que un citado libro debe pasar
 al estado de “No disponible”.
 
