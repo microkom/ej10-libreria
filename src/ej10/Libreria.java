@@ -156,7 +156,8 @@ insertado. En caso contrario (vector lleno) debe devolver -1.
     public String imprimir() {
         String texto = "";
 
-        texto = "\tLibreria: " + this.nombre + "\n\tDireccion: " + this.direccion + "\n";
+        texto = "\n\t*******************************************"
+                + "\n\tLibreria: " + this.nombre + "\n\tDireccion: " + this.direccion + "\n";
         for (int i = 0; i < libro.length; i++) {
             if (libro[i] != null) {
                 texto += "\n\t" + libro[i].getTitulo() + "\n";
