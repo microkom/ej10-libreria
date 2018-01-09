@@ -48,7 +48,7 @@ insertado. En caso contrario (vector lleno) debe devolver -1.
         ordenVector();
         int vector=-1;
         boolean granted=false;
-        for (int i = 0; i < libro.length && granted==true; i++) {
+        for (int i = 0; i < libro.length && granted==false; i++) {
             //buscar lineas que no están vacías
             if (libro[i]==null){
                 libro[i]=libroNuevo;
@@ -131,18 +131,19 @@ insertado. En caso contrario (vector lleno) debe devolver -1.
     public String imprimir(){
         String texto="6666";
         
-        texto="\tLibreria: "+this.nombre+"\tDireccion:"+this.direccion;
+        texto="\tLibreria: "+this.nombre+"\n\tDireccion: "+this.direccion+"\n";
         for (int i = 0; i < libro.length; i++) {
             if (libro[i]!=null){
-                texto+="\t"+libro[i].getTitulo()+"\n";
-                texto+="\t"+libro[i].getAutor()+"\n";
+                texto+="\n\t"+libro[i].getTitulo()+"\n";
+                texto+="\t"+libro[i].getAutor().getNombre()+" ";
+                texto+=""+libro[i].getAutor().getApellidos()+"\n";
+                texto+="\t"+libro[i].getAutor().getFechaNac().corta()+"\n";
                 if (libro[i].getDisponible()==true){
                     texto+="\tDisponible: Sí\n";
                 }else{
                     texto+="\tDisponible: No\n";
                 }
             }
-            
         }
         return texto;
     }

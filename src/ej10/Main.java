@@ -18,6 +18,8 @@ public class Main {
         Fecha fechaNac=new Fecha(dia,mes,anyo);
         Persona persona1=new Persona(autor,apellido,fechaNac);
         Libros lib1=new Libros(libro,persona1,disponible);
+        libreria1.nuevoLibro(lib1);
+        
         
         //*****
         libro="El alquimista";
@@ -27,9 +29,9 @@ public class Main {
         dia=12; mes=12; anyo=1959;
         
         Fecha fechaNac2=new Fecha(dia,mes,anyo);
-        Persona persona2=new Persona(autor,apellido,fechaNac);
-        Libros lib2=new Libros(libro,persona1,disponible);
-        
+        Persona persona2=new Persona(autor,apellido,fechaNac2);
+        Libros lib2=new Libros(libro,persona2,disponible);
+        libreria1.nuevoLibro(lib2);
          //*****
         libro="El diario de Ana Frank";
         autor="Ana";
@@ -38,13 +40,12 @@ public class Main {
         dia=7; mes=4; anyo=1934;
         
         Fecha fechaNac3=new Fecha(dia,mes,anyo);
-        Persona persona3=new Persona(autor,apellido,fechaNac);
-        Libros lib3=new Libros(libro,persona1,disponible);
+        Persona persona3=new Persona(autor,apellido,fechaNac3);
+        Libros lib3=new Libros(libro,persona3,disponible);
+        libreria1.nuevoLibro(lib3);
         
-        //libreria1.nuevoLibro(lib1);
+        System.out.println(libreria1.imprimir());
         
-        libreria1.imprimir();
-
         /*
 En la misma clase main crear los siguientes libros y añadidlos a la librería:
 
