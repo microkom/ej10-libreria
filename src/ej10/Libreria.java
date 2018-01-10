@@ -177,6 +177,7 @@ insertado. En caso contrario (vector lleno) debe devolver -1.
     /* prestar(int pos): Método para indicar que un citado libro debe pasar 
     al estado de “No disponible” */
     public void prestar(int pos) {
+        if (libro[pos]!=null)
         libro[pos].setDisponible(false);
     }
 }
